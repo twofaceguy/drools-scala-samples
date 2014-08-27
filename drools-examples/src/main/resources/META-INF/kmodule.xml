@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="HelloWorldKB" packages="org.drools.examples.helloworld">
+        <ksession name="HelloWorldKS"/>
+    </kbase>
+
+    <kbase name="StateSalienceKB" packages="org.drools.examples.state.salience">
+        <ksession name="StateSalienceKS"/>
+    </kbase>
+
+    <kbase name="StateAgendaGroupKB" packages="org.drools.examples.state.agendagroup">
+        <ksession name="StateAgendaGroupKS"/>
+    </kbase>
+
+    <kbase name="StateDynamicKB" packages="org.drools.examples.state.dynamic">
+        <ksession name="StateDynamicKS"/>
+    </kbase>
+
+    <kbase name="WumpusMainKB" packages="org.drools.games.wumpus.server, org.drools.games.wumpus.server.view">
+        <ksession name="WumpusMainKS" />
+    </kbase>
+
+    <kbase name="WumpusClientKB" packages="org.drools.games.wumpus.client">
+        <ksession name="WumpusClientKS"/>
+    </kbase>
+
+    <kbase name="HouseOfDoomKB" packages="org.drools.examples.backwardchaining">
+        <ksession name="HouseOfDoomKS"/>
+    </kbase>
+
+
+    <kbase name="PongKB" packages="org.drools.games.pong, org.drools.games.keys">
+        <ksession name="PongKS"/>
+    </kbase>
+
+    <kbase name="TextAdventureKB" packages="org.drools.games.adventures" equalsBehavior="equality">
+        <ksession name="TextAdventureKS"/>
+    </kbase>
+
+    <kbase name="CashFlowKB" packages="org.drools.examples.cashflow">
+        <ksession name="CashFlowKS"/>
+    </kbase>
+
+    <kbase name="DecisionTableKB" packages="org.drools.examples.decisiontable">
+        <ksession name="DecisionTableKS" type="stateless"/>
+    </kbase>
+
+    <kbase name="FibonacciKB" packages="org.drools.examples.fibonacci">
+        <ksession name="FibonacciKS"/>
+    </kbase>
+
+    <kbase name="GolfingKB" packages="org.drools.examples.golfing">
+        <ksession name="GolfingKS"/>
+    </kbase>
+
+    <kbase name="HonestPoliticianKB" packages="org.drools.examples.honestpolitician">
+        <ksession name="HonestPoliticianKS"/>
+    </kbase>
+
+    <kbase name="ShoppingKB" packages="org.drools.examples.shopping">
+        <ksession name="ShoppingKS"/>
+    </kbase>
+
+    <kbase name="NumberGuessKB" packages="org.drools.games.numberguess">
+        <ksession name="NumberGuessKS"/>
+    </kbase>
+
+    <kbase name="Invaders1KB" packages="org.drools.games.invaders1, org.drools.games.keys">
+        <ksession name="Invaders1KS"/>
+    </kbase>
+
+
+    <kbase name="Invaders2KB" packages="org.drools.games.invaders2, org.drools.games.keys">
+        <ksession name="Invaders2KS"/>
+    </kbase>
+
+    <kbase name="Invaders3KB" packages="org.drools.games.invaders3, org.drools.games.keys">
+        <ksession name="Invaders3KS"/>
+    </kbase>
+
+    <kbase name="Invaders4KB" packages="org.drools.games.invaders4, org.drools.games.keys">
+        <ksession name="Invaders4KS"/>
+    </kbase>
+
+    <kbase name="Invaders5KB" packages="org.drools.games.invaders5, org.drools.games.keys">
+        <ksession name="Invaders5KS"/>
+    </kbase>
+
+    <kbase name="Invaders6KB" packages="org.drools.games.invaders6, org.drools.games.keys">
+        <ksession name="Invaders6KS"/>
+    </kbase>
+
+    <kbase name="PetStoreKB" packages="org.drools.examples.petstore">
+        <ksession name="PetStoreKS"/>
+    </kbase>
+
+    <kbase name="SudokuKB" packages="org.drools.examples.sudoku">
+        <ksession name="SudokuKS"/>
+    </kbase>
+
+</kmodule>
