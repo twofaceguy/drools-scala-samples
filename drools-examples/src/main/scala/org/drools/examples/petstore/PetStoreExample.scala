@@ -15,18 +15,14 @@ import scala.collection.mutable.{ArrayBuffer => AB}
 /**
  * Created by Simon on 2014/8/28
  */
-object PetStoreExample extends App{
+object PetStoreExample extends App {
   val ks: KieServices = KieServices.Factory.get
   // From the kie services, a container is created from the classpath
   val kc: KieContainer = ks.getKieClasspathContainer
   //RuleB
-  val stock  =  new util.Vector[Product]()
+  val stock = new util.Vector[Product]()
   stock.add(new Product("Gold Fish", 5))
-
-
   stock.add(new Product("Fish Tank", 25))
-
-
   stock.add(new Product("Fish Food", 2))
   //The callback is responsible for populating working memory and
   // fireing all rules
@@ -35,60 +31,13 @@ object PetStoreExample extends App{
 }
 
 
-case class Product(@BeanProperty name: String, @BeanProperty price: Double){
-  override def hashCode: Int = {
-    val PRIME: Int = 31
-    var result: Int = 1
-    result = PRIME * result + (if (name == null) 0 else name.hashCode)
-    var temp: Long = 0L
-    temp = java.lang.Double.doubleToLongBits(price)
-    result = PRIME * result + (temp ^ (temp >>> 32)).asInstanceOf[Int]
-    result
-  }
-  override def equals(obj: Any): Boolean = {
-    //if (this eq obj) return true
-    if (obj == null) return false
-    if (getClass ne obj.getClass) return false
-    val other: Product = obj.asInstanceOf[Product]
-    if (name == null) {
-      if (other.name != null) return false
-    }
-    else if (!(name == other.name)) return false
-    if (java.lang.Double.doubleToLongBits(price) != java.lang.Double.doubleToLongBits(other.price)) return false
-     true
-  }
-}
+case class Product(@BeanProperty name: String, @BeanProperty price: Double)
 
-case class Purchase(@BeanProperty order: Order, @BeanProperty product: Product){
-  override def hashCode: Int = {
-    val PRIME: Int = 31
-    var result: Int = 1
-    result = PRIME * result + (if (order == null) 0 else order.hashCode)
-    result = PRIME * result + (if (product == null) 0 else product.hashCode)
-    result
-  }
-
-  override def equals(obj: Any): Boolean = {
-    //if (this eq obj) return true
-    if (obj == null) return false
-    if (getClass ne obj.getClass) return false
-    val other: Purchase = obj.asInstanceOf[Purchase]
-    if (order == null) {
-      if (other.order != null) return false
-    }
-    else if (!(order == other.order)) return false
-    if (product == null) {
-      if (other.product != null) return false
-    }
-    else if (!(product == other.product)) return false
-    true
-  }
-
-}
+case class Purchase(@BeanProperty order: Order, @BeanProperty product: Product)
 
 class Order(@BeanProperty var grossTotal: Double = -1,
-                 @BeanProperty var discountedTotal: Double = -1,
-                 @BeanProperty val items: util.ArrayList[Purchase] = new util.ArrayList[Purchase]()) {
+            @BeanProperty var discountedTotal: Double = -1,
+            @BeanProperty val items: util.ArrayList[Purchase] = new util.ArrayList[Purchase]()) {
   def addItem(item: Purchase) {
     items.add(item)
   }
@@ -232,6 +181,7 @@ class PetStoreUI(items: java.util.Vector[Product], callback: CheckoutCallback) e
    */
   private object NameRenderer extends DefaultTableCellRenderer {
     private final val serialVersionUID: Long = 510l
+
     override def setValue(`object`: AnyRef) {
       val item: Product = `object`.asInstanceOf[Product]
       setText(item.getName)
@@ -243,6 +193,7 @@ class PetStoreUI(items: java.util.Vector[Product], callback: CheckoutCallback) e
    */
   private object PriceRenderer extends DefaultTableCellRenderer {
     private final val serialVersionUID: Long = 510l
+
     override def setValue(`object`: AnyRef) {
       val item: Product = `object`.asInstanceOf[Product]
       setText(item.price.toString)
