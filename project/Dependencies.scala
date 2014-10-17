@@ -6,7 +6,7 @@ object Dependencies {
     "jboss" at "https://repository.jboss.org/nexus/content/repositories/public-jboss"
   )
 
-  val droolsVersion = "6.2.0.Beta1"
+  val droolsVersion = "6.2.0.Beta3"
 
   def compile(deps: ModuleID*): Seq[ModuleID] = deps map (_ % "compile")
 
